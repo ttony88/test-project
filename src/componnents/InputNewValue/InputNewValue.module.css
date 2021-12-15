@@ -1,0 +1,7 @@
+.new_value {
+    grid-area: u;
+  }
+  
+  .new_value input {
+    width: 100%;
+  }

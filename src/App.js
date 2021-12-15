@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import ButtonContainer from './componnents/Button/ButtonContainer';
+import ContentContainer from './componnents/Content/ContentContainer';
+import InputNewValueContainer from './componnents/InputNewValue/InputNewValueContainer';
+import InputPathContainer from './componnents/InputPath/InputPathContainer';
 
-function App() {
+
+/*let apply = () => {
+  props.onStateCange()
+}
+
+let onTextPathChange = () => {
+  text = newPathElement.current.value
+  props.onTextPathChange(text)
+}
+
+let onTextNewValueChange = () => {
+  text = newNewValueElement.current.value
+  props.onTextNewValueChange(text)
+}*/
+
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app_wrapper'>
+      <InputPathContainer />
+      <InputNewValueContainer />
+      <ButtonContainer />
+      <ContentContainer />  
     </div>
   );
 }

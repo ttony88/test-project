@@ -1,0 +1,7 @@
+.path {
+    grid-area: a;
+  }
+  
+.path input {
+  width: 100%;
+}

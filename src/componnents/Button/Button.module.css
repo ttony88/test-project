@@ -1,0 +1,8 @@
+.button {
+    grid-area: b;
+  }
+  
+  .button button {
+    width: 100%;
+    margin: 22px 0 0;
+  }
