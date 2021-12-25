@@ -58,28 +58,26 @@ let reducer = (state=initialState, action) => {
             }
         }
         case(STATE_CHANGE):{
-            /*let newElement = eval(`(${state.textNewValue})`)
-            let Path = eval(state.textPath)
+        let Path = state.textPath
+        let newElement = eval(`(${state.textNewValue})`)
+
+        if(Path){
+            let x = Path.split(/\W/).filter(i => i != '')
+            state[x[0]][x[1]][x[2]][x[3]] = eval(state.textNewValue)
             state.textNewValue = ''
             state.textPath = ''
-            if (newElement !==null && typeof(newElement) === 'object') {
-                return {
-                    ...state,
-                    content: [...state.content, newElement]
-                }
-            }*/ 
-                let newElement = state.textPath
-                let x = newElement.split(/\W/).filter(i => i != '')
-                state[x[0]][x[1]][x[2]][x[3]] = eval(state.textNewValue)
-                console.log(x)
-                
-                return {...state,
-                    content: [...state.content]
-                }
-
-              
+            return {...state}    
         }
-    }
+        state.textNewValue = ''
+            return {
+                ...state,
+                content: [...state.content, newElement]
+            }
+        }
+                
+            
+        }
+    
     return state 
 }
 
