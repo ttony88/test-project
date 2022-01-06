@@ -4,8 +4,17 @@
     height: 500px;
     margin: 10px 0 0;
     background-color: #fff;
-  }
+}
 
 .panel {
+    margin: 20px auto;
     border: 1px solid #000;
+}
+.label {
+    color: red;
+    margin: 0 auto;
+    text-align: center;
+}
+.button {
+    margin: 10px auto;
 }
