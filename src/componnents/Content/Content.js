@@ -5,14 +5,14 @@ const Content = (props) => {
     return <>
         <div className={classes.content}>
             {props.state.content.map (e => {
-                if(e.type == 'panel') {
+                if(e.type === 'panel') {
                     return addPanel(e)
                 }
-                else if (e.type == 'label') {
-                    return <span className={classes.label} style={{display: e.props.visible ? 'block' : 'none'}}>{e.props.caption}</span>
+                else if (e.type === 'label') {
+                    return <span kay={e.id} className={classes.label} style={{display: e.props.visible ? 'block' : 'none'}}>{e.props.caption}</span>
                 }
-                else if (e.type == 'button') {
-                    return <button className={classes.button}
+                else if (e.type === 'button') {
+                    return <button kay={e.id} className={classes.button}
                     style={{width: e.props.width, height: e.props.height,
                           display: e.props.visible ? 'block' : 'none'}}>push</button>
                 }
@@ -23,21 +23,21 @@ const Content = (props) => {
 }
 
 function addPanel(e) {
-    if(e.type == 'panel') {
+    if(e.type === 'panel') {
         return <div className={classes.panel} 
         style={{width: e.props.width, height: e.props.height, 
               display: e.props.visible ? 'block' : 'none'}}>
             {e.content.map (e => {
-                if (e.type == 'label') {
-                    return <span className={classes.label} style={{display: e.props.visible ? 'block' : 'none'}}>
+                if (e.type === 'label') {
+                    return <span kay={e.id} className={classes.label} style={{display: e.props.visible ? 'block' : 'none'}}>
                            {e.props.caption}</span>
                 }
-                else if (e.type == 'button') {
-                    return <button className={classes.button}
+                else if (e.type === 'button') {
+                    return <button kay={e.id} className={classes.button}
                     style={{width: e.props.width, height: e.props.height,
                           display: e.props.visible ? 'block' : 'none'}}>push</button>
                 }
-                else if (e.type == 'panel'){
+                else if (e.type === 'panel'){
                     return addPanel(e)
                 }
 
